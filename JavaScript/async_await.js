@@ -1,3 +1,4 @@
+import { customFilter } from "./utils.js";
 async function fetchPost() {
       
   try {
@@ -8,7 +9,7 @@ async function fetchPost() {
     }
 
     const data = await response.json(); // Parse JSON into a JavaScript object
-    const filteredData = data.filter(post => post.title.length < 25); // Filter posts with title length less than 25 characters
+    const filteredData = customFilter(data, post => post.title.length < 25); // Filter posts with title length less than 25 characters
     console.log("posts with title length < 25 characters", filteredData);
     return filteredData;
   }catch (error) {
