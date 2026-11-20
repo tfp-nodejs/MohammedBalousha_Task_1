@@ -8,8 +8,9 @@ async function fetchPost() {
     }
 
     const data = await response.json(); // Parse JSON into a JavaScript object
-    console.log("Response Data:", data);
-    return data;
+    const filteredData = data.filter(post => post.title.length < 25); // Filter posts with title length less than 25 characters
+    console.log("posts with title length < 25 characters", filteredData);
+    return filteredData;
   }catch (error) {
     console.error("Request Failed:", error);
   }
