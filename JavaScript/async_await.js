@@ -1,7 +1,7 @@
 async function fetchPost() {
       
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts/");
 
     if (!response.ok) {
       throw new Error(`HTTP Error: ${response.status}`);
